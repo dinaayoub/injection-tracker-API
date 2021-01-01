@@ -6,9 +6,10 @@
 
 - [Injection Tracker Android App](https://play.google.com/store/apps/details?id=com.yemry.injectiontracker&hl=en_US&gl=US)
 - [ci/cd](https://github.com/dinaayoub/injection-tracker-api/actions) (GitHub Actions)
-- [back-end server url on heroku](https://injection-tracker-api.herokuapp.com/)
-- [Trello Board](https://trello.com/b/v6gEVCil/injection-tracker-features)
-- [AWS API gateway]
+- [Back-end server deployed on Heroku](https://injection-tracker-api.herokuapp.com/)
+- [Trello Board for this API](https://trello.com/b/ZtSxgVog/injection-tracker-api)
+- [Trello Board for Android App](https://trello.com/b/v6gEVCil/injection-tracker-features)
+- [AWS API gateway]()
 
 ## Setup
 
@@ -37,4 +38,4 @@
 
 ### UML
 
-![UML Diagram](assets/auth-uml.png)
+![UML Diagram](assets/.png)
