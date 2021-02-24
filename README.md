@@ -1,15 +1,17 @@
-# Injection Tracker API
+# Injection Tracker API - Backend
 
 ## Author: Dina Ayoub
 
 ## Links and Resources
 
-- [Injection Tracker Android App](https://play.google.com/store/apps/details?id=com.yemry.injectiontracker&hl=en_US&gl=US)
-- [ci/cd](https://github.com/dinaayoub/injection-tracker-api/actions) (GitHub Actions)
-- [Back-end server deployed on Heroku](https://injection-tracker-api.herokuapp.com/)
-- [Trello Board for this API](https://trello.com/b/ZtSxgVog/injection-tracker-api)
-- [Trello Board for Android App](https://trello.com/b/v6gEVCil/injection-tracker-features)
-- [AWS API gateway]()
+- Frontend: 
+  - [Injection Tracker Android App](https://play.google.com/store/apps/details?id=com.yemry.injectiontracker&hl=en_US&gl=US)
+  - [Injection Tracker App Code](https://bitbucket.org/injectiontracker/injection-tracker/src/master/)
+  - [Trello Board for Android App](https://trello.com/b/v6gEVCil/injection-tracker-features)
+- Backend:
+  - [ci/cd](https://github.com/dinaayoub/injection-tracker-api/actions) (GitHub Actions)
+  - [Back-end server deployed on Heroku](https://injection-tracker-api.herokuapp.com/)
+  - [Trello Board for API](https://trello.com/b/ZtSxgVog/injection-tracker-api)
 
 ## Setup
 
@@ -26,6 +28,10 @@
 
 - POST: /signup accepts a json body or a form with username and password fields and creates them in the db
 - POST /signin accepts a username and password in basic auth headers (url encoded password)
+- POST /injection
+- GET /injection
+- PUT /injection
+- DELETE /injection
 
 ### Tests
 
