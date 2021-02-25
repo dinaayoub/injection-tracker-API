@@ -1,12 +1,13 @@
 'use strict';
 
 const { server } = require('../source/server');
-const supertest = require('supertest');
+// const supertest = require('supertest');
 // const mockRequest = supertest(server);
 // const authenticate = require('../source/auth/authenticate');
 const supergoose = require('@code-fellows/supergoose');
 const { it } = require('@jest/globals');
 const agent = supergoose(server);
+process.env.SECRET = 'bananas';
 
 describe('Web Server', () => {
   // var req = {
@@ -42,7 +43,6 @@ describe('Web Server', () => {
 
   it('Should not sign in an invalid user', async () => {
     let response = await agent.post('/signin').auth('foo', 'bars');
-    // console.log('RESPONSE = ', response);
     expect((response.statusCode)).toEqual(403);
     //TODO: Figure out how to consume the error here. 
   });
