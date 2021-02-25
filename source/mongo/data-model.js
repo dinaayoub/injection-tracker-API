@@ -8,10 +8,12 @@ class DataCollection {
   // we pass the user ID that we received in the request to make sure 
   // the user is getting access to their OWN information only
   get(user_id, _id) {
+    console.log(`user id = ${user_id} and _id = ${_id}`);
+    console.log(typeof user_id);
     if (_id && user_id) {
-      return this.model.find({ _id, user_id });
+      return this.model.findOne({ _id, user_id }).exec();
     } else {
-      return this.model.find({ user_id });
+      return this.model.find({ user_id }).exec();
     }
   }
 
@@ -28,17 +30,24 @@ class DataCollection {
   //   }
   // }
 
-  post(record, user_id) {
+  post(record) {
+    console.log(`RECORD = ${record}`);
     let newRecord = new this.model(record);
-    if (newRecord.user_id === user_id) return newRecord.save();
+    return newRecord.save();
   }
 
-  put(_id, record, user_id) {
-    return this.model.findByIdAndUpdate(_id, record, user_id, { new: true });
+  put(_id, record) {
+    // console.log(`record = `, record);
+    // console.log(`_id = `, _id);
+    let updatedRecord = this.model.findOneAndUpdate({ _id, user_id: record.user_id }, record, { new: true });
+    // console.log(`updated record = `, updatedRecord);
+    return updatedRecord;
   }
 
   delete(_id, user_id) {
-    return this.model.findByIdAndDelete(_id, user_id);
+    let deletedRecord = this.model.findOneAndDelete({ _id, user_id });
+    if (deletedRecord) return deletedRecord;
+    else return 'Item doesn\'t exist or access is denied';
   }
 }
 

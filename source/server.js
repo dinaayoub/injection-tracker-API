@@ -35,17 +35,17 @@ app.use('*', notFoundError);
 app.use(internalServerError);
 
 function start(port, mongoDB) {
-    if (port) {
-        mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true })
-            .then(() => {
-                app.listen(port, () => console.log('Server is up on port ', port));
-            })
-            .catch(error => console.error('Could not start server', error.message));
-    }
-    else throw new Error('no port provided');
+  if (port) {
+    mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true })
+      .then(() => {
+        app.listen(port, () => console.log('Server is up on port ', port));
+      })
+      .catch(error => console.error('Could not start server', error.message));
+  }
+  else throw new Error('no port provided');
 }
 
 module.exports = {
-    server: app,
-    start: start
-}
+  server: app,
+  start: start,
+};
