@@ -26,7 +26,6 @@ async function getInjection(req, res) {
 
 async function postInjection(req, res) {
   let medication = await medications.get(req.user_id, req.body.medication_id);
-  // console.log('MEDICATION = ', medication);
   if (medication) {
     res.status(200).json(await injections.post({ ...req.body, user_id: req.user_id }));
   }
